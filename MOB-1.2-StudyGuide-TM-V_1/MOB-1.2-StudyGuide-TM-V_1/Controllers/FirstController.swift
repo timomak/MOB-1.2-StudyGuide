@@ -10,7 +10,7 @@ import UIKit
 
 class FirstController: UIViewController {
     // MARK: Welcome to my Cheat Sheet. Everything Here is programmatic (Sorry not Sorry)
-    
+
     // Welcome Label
     private let welcomeLabel: UITextView = {
         let textView = UITextView()
@@ -41,10 +41,11 @@ class FirstController: UIViewController {
         view.addSubview(welcomeLabel)
         
         // Add Programmatic constraints using extention.
-        welcomeLabel.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 350, left: 0, bottom: 0, right: 0), size: .init(width: view.bounds.width, height: 100))
+//        welcomeLabel.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: view.bounds.height / 3, left: 20, bottom: 0, right: 20), size: .init(width: 0, height: 100))
+        welcomeLabel.centerOfView(to: view)
         
         view.addSubview(nextViewButton)
-        nextViewButton.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 450, left: 20, bottom: 0, right: 20), size: .init(width: welcomeLabel.bounds.width, height: 100))
+        nextViewButton.anchor(top: welcomeLabel.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 90, left: 20, bottom: 0, right: 20), size: .init(width: 0, height: 60))
 
     }
     
